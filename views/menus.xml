@@ -1,0 +1,41 @@
+<odoo>
+	<!-- Auto rentals -->
+	<menuitem name="Auto rentals" id="autorentas.menu_root"/>
+
+	<!-- *************************************************************** -->
+
+	<menuitem name="Rentals" id="autorentas.rentals_menu" 
+		parent="autorentas.menu_root" action="autorentas.rental_list"/>
+
+	<!-- *************************************************************** -->
+
+	<!-- Auto rentals > Clients -->
+	<menuitem name="Clients" id="autorentas.clients_menu" 
+		parent="autorentas.menu_root"/>	
+
+	<!-- Auto rentals > Clients > Catalog -->
+	<menuitem name="Catalog" id="autorentas.clients_catalog" 
+		parent="autorentas.clients_menu" action="autorentas.client_list"/>	
+
+	<!-- *************************************************************** -->
+	
+	<!-- Auto rentals > Vehicles -->
+	<menuitem name="Vehicles" id="autorentas.vehicles_menu" 
+		parent="autorentas.menu_root"/>
+	
+	<!-- Auto rentals > Vehicles > Catalog-->
+	<menuitem name="Catalog" id="autorentas.vehicles_catalog" 
+		parent="autorentas.vehicles_menu" action="autorentas.vehicle_list"/>
+	
+	<!-- Auto rentals > Vehiculo > Car Type -->
+	<menuitem name="Car Type" id="autorentas.cartypes_menu" 
+		parent="autorentas.vehicles_menu" action="autorentas.cartype_list"/>
+
+	<!-- Auto rentals > Vehiculo > Brand -->
+	<menuitem name="Brand" id="autorentas.brands_menu" 
+		parent="autorentas.vehicles_menu" action="autorentas.brand_list"/>
+
+	<!-- Auto rentals > Vehiculo > Model -->
+	<menuitem name="Model" id="autorentas.modelsq_menu" 
+		parent="autorentas.vehicles_menu" action="autorentas.model_list"/>
+</odoo>
