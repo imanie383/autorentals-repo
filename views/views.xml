@@ -48,6 +48,27 @@
             </field>
         </record>
 
+        <!-- Vehicles form view -->
+		<record model="ir.ui.view" id="autorentas.rentals_form">
+            <field name="name">vehicle.form</field>
+            <field name="model">autorentas.rental</field>
+            <field name="arch" type="xml">
+                <form string="Vehicle Form">
+                    <sheet>
+                        <group>
+                            <field name="vehicle_id"/>
+							<field name="client_id"/>
+							<field name="date_start"/>
+							<field name="date_end"/>
+							<field name="total_price" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
         <!-- Clients form view -->
 		<record model="ir.ui.view" id="autorentas.client_form">
             <field name="name">client.form</field>
