@@ -10,7 +10,7 @@ class autorentas(models.Model):
     _name = 'autorentas.rental'
 
     vehicle_id = fields.Many2one('autorentas.vehicle')
-    client_id = fields.Many2one('autorentas.client')
+    client_id = fields.Many2one('res.partner')
 
     date_start = fields.Date()
     date_end = fields.Date()

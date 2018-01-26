@@ -14,7 +14,7 @@
 		parent="autorentas.menu_root"/>	
 
 	<!-- Auto rentals > Clients > Catalog -->
-	<menuitem name="Catalog" id="autorentas.clients_catalog" 
+	<menuitem name="Catalog" id="autorentas.clients_menu_list" 
 		parent="autorentas.clients_menu" action="autorentas.client_list"/>	
 
 	<!-- *************************************************************** -->

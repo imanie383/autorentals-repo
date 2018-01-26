@@ -7,14 +7,19 @@ class autorentas(models.Model):
     _name = 'autorentas.vehicle'
 
     plate = fields.Char(required=True)
-    cartype_id = fields.Many2one('autorentas.cartype')
     brand_id = fields.Many2one('autorentas.brand')
     model_id = fields.Many2one('autorentas.model')
     color = fields.Char(required=True)
     description = fields.Text()
 
+    #Actual year
     now = datetime.datetime.now()
     now = now.year
     
     year=fields.Char(default = now, required=True)
     price = fields.Float()
+
+
+    sql_constraints = [
+        ('plate_unique', 'UNIQUE(plate)', "The plate must be unique" )
+    ]

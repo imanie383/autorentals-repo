@@ -15,7 +15,7 @@
 		</record>
 
 		<!-- Clients tree view -->
-		<record model="ir.ui.view" id="autorentas.client_tree">
+		<!-- <record model="ir.ui.view" id="autorentas.client_tree">
 			<field name="name">Vehicles</field>
 			<field name="model">autorentas.client</field>
 			<field name="arch" type="xml">
@@ -24,7 +24,7 @@
 					<field name="lastname"/>
 				</tree>
 			</field>
-		</record>
+		</record> -->
 
 		<!-- Vehicles form view -->
 		<record model="ir.ui.view" id="autorentas.vehicle_form">
@@ -35,7 +35,6 @@
                     <sheet>
                         <group>
                             <field name="plate"/>
-							<field name="cartype_id"/>
 							<field name="brand_id"/>
 							<field name="model_id"/>
 							<field name="color"/>
@@ -70,7 +69,7 @@
 
 
         <!-- Clients form view -->
-		<record model="ir.ui.view" id="autorentas.client_form">
+		<!-- <record model="ir.ui.view" id="autorentas.client_form">
             <field name="name">client.form</field>
             <field name="model">autorentas.client</field>
             <field name="arch" type="xml">
@@ -89,7 +88,7 @@
                     </sheet>
                 </form>
             </field>
-        </record>
+        </record> -->
 
 
 </odoo>

@@ -1,36 +1,40 @@
 <odoo>
-	<!-- actions opening views on models -->
+	<!-- Vehicles action -->
 	<record model="ir.actions.act_window" id="autorentas.vehicle_list">
 		<field name="name">Vehicles</field>
 		<field name="res_model">autorentas.vehicle</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 	
+	<!-- Brands action -->
 	<record model="ir.actions.act_window" id="autorentas.brand_list">
 		<field name="name">Brands</field>
 		<field name="res_model">autorentas.brand</field>
 		<field name="view_mode">tree,form</field>
 	</record>
-			
+	
+	<!-- Models action -->
 	<record model="ir.actions.act_window" id="autorentas.model_list">
 		<field name="name">Models</field>
 		<field name="res_model">autorentas.model</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 			
+	<!-- Car Type action-->
 	<record model="ir.actions.act_window" id="autorentas.cartype_list">
 		<field name="name">Car Types</field>
 		<field name="res_model">autorentas.cartype</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 	
-
+	<!-- Clients action -->
 	<record model="ir.actions.act_window" id="autorentas.client_list">
 		<field name="name">Clients</field>
-		<field name="res_model">autorentas.client</field>
+		<field name="res_model">res.partner</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
+	<!-- Rentals action -->
 	<record model="ir.actions.act_window" id="autorentas.rental_list">
 		<field name="name">Rentals</field>
 		<field name="res_model">autorentas.rental</field>
