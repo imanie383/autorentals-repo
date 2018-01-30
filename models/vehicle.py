@@ -5,7 +5,8 @@ from odoo import models, fields, api
 
 class autorentas(models.Model):
     _name = 'autorentas.vehicle'
-
+    _rec_name='plate'
+    
     plate = fields.Char(required=True)
     brand_id = fields.Many2one('autorentas.brand')
     model_id = fields.Many2one('autorentas.model')

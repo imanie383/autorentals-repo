@@ -1,94 +1,89 @@
 <odoo>
-		<!-- explicit list view definition -->
-		
-		<!-- Vehicles tree view -->
-		<record model="ir.ui.view" id="autorentas.vehicle_tree">
-			<field name="name">Vehicles</field>
-			<field name="model">autorentas.vehicle</field>
-			<field name="arch" type="xml">
-				<tree>
-					<field name="plate"/>
-					<field name="brand_id"/>
-					<field name="model_id"/>
-				</tree>
-			</field>
-		</record>
+	<!-- explicit list view definition -->
+	
+	<!-- Vehicles tree view -->
+	<record model="ir.ui.view" id="autorentas.vehicle_tree">
+		<field name="name">Vehicles</field>
+		<field name="model">autorentas.vehicle</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="plate"/>
+				<field name="brand_id"/>
+				<field name="model_id"/>
+			</tree>
+		</field>
+	</record>
 
-		<!-- Clients tree view -->
-		<!-- <record model="ir.ui.view" id="autorentas.client_tree">
-			<field name="name">Vehicles</field>
-			<field name="model">autorentas.client</field>
-			<field name="arch" type="xml">
-				<tree>
-					<field name="name"/>
-					<field name="lastname"/>
-				</tree>
-			</field>
-		</record> -->
+	<!-- Clients tree view -->
+	<record model="ir.ui.view" id="autorentas.client_tree">
+		<field name="name">Vehicles</field>
+		<field name="model">autorentas.rental</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="vehicle_id"/>
+				<field name="client_id"/>
+				<field name="date_start"/>
+				<field name="date_end"/>
+				<field name="total_price"/>
+			</tree>
+		</field>
+	</record>
 
-		<!-- Vehicles form view -->
-		<record model="ir.ui.view" id="autorentas.vehicle_form">
-            <field name="name">vehicle.form</field>
-            <field name="model">autorentas.vehicle</field>
-            <field name="arch" type="xml">
-                <form string="Vehicle Form">
-                    <sheet>
-                        <group>
-                            <field name="plate"/>
-							<field name="brand_id"/>
-							<field name="model_id"/>
-							<field name="color"/>
-							<field name="description"/>
-							<field name="year"/>
-							<field name="price"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+	<!-- Vehicles form view -->
+	<record model="ir.ui.view" id="autorentas.vehicle_form">
+        <field name="name">Vehicles</field>
+        <field name="model">autorentas.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Form">
+                <sheet>
+                    <group>
+                        <field name="plate"/>
+						<field name="brand_id"/>
+						<field name="model_id" domain="[('brand_id','=',brand_id)]"/>
+						<field name="color"/>
+						<field name="description"/>
+						<field name="year"/>
+						<field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Vehicles form view -->
-		<record model="ir.ui.view" id="autorentas.rentals_form">
-            <field name="name">vehicle.form</field>
-            <field name="model">autorentas.rental</field>
-            <field name="arch" type="xml">
-                <form string="Vehicle Form">
-                    <sheet>
-                        <group>
-                            <field name="vehicle_id"/>
-							<field name="client_id"/>
-							<field name="date_start"/>
-							<field name="date_end"/>
-							<field name="total_price" readonly="1"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+	<!-- Vehicles form view -->
+	<record model="ir.ui.view" id="autorentas.model_form">
+        <field name="name">Vehicles</field>
+        <field name="model">autorentas.model</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+						<field name="cartype_id"/>
+						<field name="brand_id"/>
+						<field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>		
 
-
-
-        <!-- Clients form view -->
-		<!-- <record model="ir.ui.view" id="autorentas.client_form">
-            <field name="name">client.form</field>
-            <field name="model">autorentas.client</field>
-            <field name="arch" type="xml">
-                <form string="Vehicle Form">
-                    <sheet>
-                        <group string="Name">
-                            <field name="name"/>
-							<field name="lastname"/>
-                        </group>
-                        <group string="Residence">
-							<field name="street"/>
-							<field name="neighourhood"/>
-							<field name="interior"/>
-							<field name="outdoor"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record> -->
-
-
+    <!-- Rental form view -->
+	<record model="ir.ui.view" id="autorentas.rentals_form">
+        <field name="name">Rentals</field>
+        <field name="model">autorentas.rental</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Form">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id" _rec_name="plate"/>
+						<field name="client_id"/>
+						<field name="date_start"/>
+						<field name="date_end"/>
+						<field name="total_price" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>

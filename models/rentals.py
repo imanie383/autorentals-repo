@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
@@ -19,7 +18,7 @@ class autorentas(models.Model):
 
     @api.onchange('date_start', 'date_end', 'vehicle_id')
     def calculate_price(self):
-        if self.date_end and self.date_start:
+        if self.date_end and self.date_start: 
             # Read dates
             d0 = datetime.strptime(self.date_start,'%Y-%m-%d')
             d1 = datetime.strptime(self.date_end,'%Y-%m-%d')
