@@ -21,6 +21,6 @@ class autorentas(models.Model):
     price = fields.Float()
 
 
-    sql_constraints = [
-        ('plate_unique', 'UNIQUE(plate)', "The plate must be unique" )
+    _sql_constraints = [
+        ('name_unique', 'UNIQUE(plate)', "The plate must be unique")
     ]
