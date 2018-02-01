@@ -8,8 +8,8 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="plate"/>
-				<field name="brand_id"/>
 				<field name="model_id"/>
+				<field name="brand_id"/>
 			</tree>
 		</field>
 	</record>

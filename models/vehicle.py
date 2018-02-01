@@ -8,8 +8,8 @@ class autorentas(models.Model):
     _rec_name='plate'
     
     plate = fields.Char(required=True)
-    brand_id = fields.Many2one('autorentas.brand')
-    model_id = fields.Many2one('autorentas.model')
+    brand_id = fields.Many2one('autorentas.brand', required=True)
+    model_id = fields.Many2one('autorentas.model', required=True)
     color = fields.Char(required=True)
     description = fields.Text()
 
@@ -18,7 +18,7 @@ class autorentas(models.Model):
     now = now.year
     
     year=fields.Char(default = now, required=True)
-    price = fields.Float()
+    price = fields.Float(required=True)
 
 
     _sql_constraints = [

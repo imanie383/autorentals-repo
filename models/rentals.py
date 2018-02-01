@@ -9,11 +9,11 @@ class autorentas(models.Model):
     _name = 'autorentas.rental'
     _rec_name = 'client_id'
 
-    vehicle_id = fields.Many2one('autorentas.vehicle')
-    client_id = fields.Many2one('res.partner', copy=False)
+    vehicle_id = fields.Many2one('autorentas.vehicle', required=True)
+    client_id = fields.Many2one('res.partner', copy=False, required=True)
 
-    date_start = fields.Date()
-    date_end = fields.Date()
+    date_start = fields.Date(required=True)
+    date_end = fields.Date(required=True)
 
     total_price = fields.Char(compute="calculate_price")
 
