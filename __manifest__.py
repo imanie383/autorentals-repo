@@ -24,11 +24,12 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/actions.xml',
         'views/menus.xml',
-        'views/templates.xml'
+        'views/templates.xml',
+        'security/security.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

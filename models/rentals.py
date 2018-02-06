@@ -33,13 +33,9 @@ class autorentas(models.Model):
                 d1 = datetime.strptime(record.date_end,'%Y-%m-%d')
                 
                 # Get the days number
-                if d0 < d1:
-                    n_days = d1 - d0
-                    n_days = str(n_days)
-                    n_days = n_days.split(' ')
-                    n_days = n_days[0]
-                    n_days = float(n_days)
-                
+                if d0 == d1:
+                    n_days = 1;
+
                     # Get price by day
                     a_day = record.vehicle_id.price
                     a_day  = float(a_day)
@@ -47,15 +43,24 @@ class autorentas(models.Model):
                     #Get and write the total
                     record.total_price = str(a_day*n_days)
                 else:
-                    return {
-                        'warning' : {
-                            'title' : "Error",
-                            'message' : "The start date must be before the end date"
+                    if d0 <= d1:
+                        n_days = d1 - d0
+                        n_days = str(n_days)
+                        n_days = n_days.split(' ')
+                        n_days = n_days[0]
+                        n_days = float(n_days)
+                    
+                        # Get price by day
+                        a_day = record.vehicle_id.price
+                        a_day  = float(a_day)
+
+                        #Get and write the total
+                        record.total_price = str(a_day*n_days)
+                    else:
+                        record.date_start = record.date_end
+                        return {
+                            'warning' : {
+                                'title' : "Error",
+                                'message' : "The start date must be before the end date"
+                            }
                         }
-                    }
-    
-    @api.onchange('date_start', 'date_end', 'vehicle_id')                
-    def check_dates(self):
-        if self.date_end and self.date_start:
-            if self.date_end > self.date_start:
-                print("end date is before start date")
