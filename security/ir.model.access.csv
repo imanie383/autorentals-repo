@@ -2,6 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 identifier_brand,name_brand,model_autorentas_brand,group_manager,1,1,1,1
 identifier_cartype,name_cartype,model_autorentas_cartype,group_manager,1,1,1,1
 identifier_model,name_model,model_autorentas_model,group_manager,1,1,1,1
-identifier_rentals,name_rentals,model_autorentas_rentals,group_manager,1,1,1,1
-identifier_rentals,name_rentals,model_autorentas_rentals,group_manager,1,1,1,1
+identifier_rentals,name_rentals,model_autorentas_rental,group_manager,1,1,1,1
 identifier_vehicle,name_vehicle,model_autorentas_vehicle,group_manager,1,1,1,1
