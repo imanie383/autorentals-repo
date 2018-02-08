@@ -32,7 +32,6 @@ class autorentas(models.Model):
                 d0 = datetime.strptime(record.date_start,'%Y-%m-%d')
                 d1 = datetime.strptime(record.date_end,'%Y-%m-%d')
                 
-                # Get the days number
                 if d0 == d1:
                     n_days = 1;
 
@@ -44,17 +43,24 @@ class autorentas(models.Model):
                     record.total_price = str(a_day*n_days)
                 else:
                     if d0 <= d1:
+                        #Get number of days
                         n_days = d1 - d0
                         n_days = str(n_days)
                         n_days = n_days.split(' ')
                         n_days = n_days[0]
                         n_days = float(n_days)
+
+                        print(n_days)
                     
                         # Get price by day
                         a_day = record.vehicle_id.price
                         a_day  = float(a_day)
 
                         #Get and write the total
+                        if n_days>20:
+                            a_day = a_day*0.70
+                        
+                        print(a_day)
                         record.total_price = str(a_day*n_days)
                     else:
                         record.date_start = record.date_end
